@@ -57,7 +57,7 @@ a {
 }
 
 .section-desc {
-  width: 468px;
+  /* width: 468px; */
   margin-top: 18px;
   color: #575f66;
   font-size: 1.8rem;
@@ -245,6 +245,7 @@ a {
 }
 
 .services__desc {
+  width: 486px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -318,6 +319,10 @@ a {
 .work {
   padding: 100px 0;
   background: #f6fbff;
+}
+
+.work__desc {
+  width: 486px;
 }
 
 .work__list {
@@ -500,4 +505,45 @@ a {
   background: #2e80ce;
   border-color: #2e80ce;
   cursor: pointer;
+}
+
+/* ================= CTA ================ */
+.cta {
+  padding: 180px 0 85px;
+}
+
+.cta__row {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 70px;
+  border-radius: 4px;
+  background: #2e80ce;
+}
+
+.cta__image {
+  display: flex;
+  width: 284px;
+  height: 522px;
+  object-fit: cover;
+  margin-top: -95px;
+}
+
+.cta__content {
+  margin-left: 160px;
+}
+
+.cta__heading,
+.cta__desc {
+  color: #fff;
+}
+
+.cta__heading {
+  width: 489px;
+}
+
+.cta__app {
+  margin-top: 38px;
+  display: flex;
+  gap: 38px;
 }
