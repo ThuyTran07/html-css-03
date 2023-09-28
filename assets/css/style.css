@@ -22,6 +22,14 @@ body {
   margin: 0 auto;
 }
 
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 a {
   text-decoration: none;
 }
@@ -31,7 +39,7 @@ a {
   --color: #2e80ce;
 
   display: inline-block;
-  min-width: 205px;
+  width: 205px;
   height: var(--height);
   border: 1px solid var(--color);
   border-radius: 999px;
@@ -57,7 +65,6 @@ a {
 }
 
 .section-desc {
-  /* width: 468px; */
   margin-top: 18px;
   color: #575f66;
   font-size: 1.8rem;
@@ -565,7 +572,6 @@ a {
   max-width: 470px;
 }
 .news__link {
-  width: 50%;
   display: inline-block;
   margin: 28px 0;
   color: #10375c;
@@ -574,6 +580,7 @@ a {
   font-weight: 600;
   line-height: 155.556%;
   text-decoration-line: underline;
+  text-underline-offset: 4px;
 }
 
 .news__link:hover {
@@ -589,26 +596,36 @@ a {
 
 .news-item {
   border-radius: 12px;
-  border: 1px solid #e8ebee;
+  overflow: hidden;
   background: #fff;
+  transition: 0.25s;
 }
 
 .news-item:hover {
   box-shadow: 0px 18px 50px 0px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
 }
 
 .news-item:hover .news-item__link {
   color: #2e80ce;
 }
 
+.news-item:hover .news-item__body {
+  border-color: #fff;
+}
+
 .news-item__image {
-  max-width: 100%;
+  display: block;
+  width: 100%;
   aspect-ratio: 3 / 2;
-  border-radius: 12px 12px 0px 0px;
 }
 
 .news-item__body {
-  padding: 18px 22px 21px;
+  padding: 22px;
+  border: 1px solid #e8ebee;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  transition: 0.25s;
 }
 
 .news-item__heading {
@@ -640,10 +657,12 @@ a {
 }
 
 .new-patient__row {
-  padding: 100px 0;
+  padding: 100px 78px;
   display: flex;
+  border-radius: 4px;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   background: #f6fbff;
 }
 
@@ -657,6 +676,7 @@ a {
 .new-patient__desc {
   max-width: 617px;
   margin: 0;
+  font-size: 1.6rem;
 }
 
 .btn--new-patient {
@@ -668,12 +688,12 @@ a {
   padding: 100px 0 42px;
   background: #10375c;
   line-height: 175%;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
 }
 
 .footer__row {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 3fr;
+  grid-template-columns: 3fr 1.25fr 1.25fr 3fr;
   gap: 78px;
 }
 
@@ -693,7 +713,6 @@ a {
 
 .footer__desc,
 .footer__input::placeholder {
-  margin-top: 10px;
   color: #a9b3bb;
   font-size: 1.4rem;
   font-weight: 400;
@@ -702,28 +721,39 @@ a {
 
 .footer__desc--logo {
   margin-top: 21px;
+  font-size: 1.6rem;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
 }
 
 .footer__social {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   gap: 10px;
 }
 
 .footer__social-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #fff;
-  color: #2e80ce;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #2e80ce;
+  background: #fff;
+  transition: 0.25s;
 }
 
 .footer__social-icon:hover {
   color: #fff;
   background: #2e80ce;
+}
+
+.footer__desc--subscribe {
+  margin-top: 10px;
+  max-width: 273px;
 }
 
 .footer__subscribe-input {
@@ -734,28 +764,29 @@ a {
 .footer__input {
   width: 212px;
   height: 46px;
-  border-radius: 4px;
   border: 1px solid #406181;
+  border-radius: 4px;
+  padding: 10px;
+  color: #a9b3bb;
   background: transparent;
 }
 
-.footer__input::placeholder {
-  padding: 10px 0 10px 10px;
-  font-family: "Open Sans";
+.footer__input:focus {
+  outline: solid 1px #2e80ce;
 }
 
 .footer__submit {
+  --height: 46px;
   width: 108px;
-  height: 46px;
   border-radius: 4px;
-  background: #2e80ce;
-  font-family: "Open Sans";
-  border: none;
   margin-left: 12px;
-  color: #fff;
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 185.714%;
+}
+
+.footer__submit:hover {
+  opacity: 0.8;
 }
 
 .footer__line {
